@@ -259,7 +259,10 @@ export function ContractPDF({
         {contract.related_systems && contract.related_systems.length > 0 && (
           <View style={s.section}>
             <Text style={s.sectionNum}>06 / RELATED SYSTEMS</Text>
-            <Text style={s.sectionH2}>Other high-ROI systems Quickomate operates.</Text>
+            <Text style={s.sectionH2}>{contract.related_systems_title || "Other high-ROI systems Quickomate operates."}</Text>
+            {contract.related_systems_intro && (
+              <Text style={[s.para, { color: "#444", marginBottom: 4 }]}>{contract.related_systems_intro}</Text>
+            )}
             <View style={s.relatedGrid}>
               {contract.related_systems.map((r, i) => (
                 <View key={i} style={s.relatedTile}>

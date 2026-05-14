@@ -155,11 +155,11 @@ export function ContractDocument({ contract, provider, showStatus = true }: Prop
       {contract.related_systems && contract.related_systems.length > 0 && (
         <Section
           num="06 / RELATED SYSTEMS"
-          title="Other high-ROI systems Quickomate operates."
+          title={contract.related_systems_title || "Other high-ROI systems Quickomate operates."}
         >
           <p className="text-sm text-[#444] mb-4 max-w-[680px]">
-            In addition to the system proposed above, here are adjacent offerings clients
-            commonly pair with this engagement.
+            {contract.related_systems_intro ||
+              "In addition to the system proposed above, here are adjacent offerings clients commonly pair with this engagement."}
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {contract.related_systems.map((r, i) => (

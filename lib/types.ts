@@ -37,6 +37,8 @@ export type Contract = {
   deliverables: Deliverable[];
   timeline: Deliverable[];
   related_systems: RelatedSystem[];
+  related_systems_title: string | null;
+  related_systems_intro: string | null;
   fees: Fees;
   terms: Clause[];
   custom_blocks: Clause[];

@@ -12,6 +12,16 @@ const DeliverableSchema = z.object({
   detail: z.string().optional().default(""),
 });
 
+const TimelineSchema = z.object({
+  label: z.string().min(1),
+  detail: z.string().optional().default(""),
+});
+
+const RelatedSystemSchema = z.object({
+  title: z.string().min(1),
+  body: z.string().min(1),
+});
+
 const ClauseSchema = z.object({
   heading: z.string().min(1),
   body: z.string().min(1),
@@ -24,13 +34,20 @@ const PayloadSchema = z.object({
   client_email: z.string().email(),
   client_company: z.string().optional().nullable(),
   client_title: z.string().optional().nullable(),
-  lede: z.string().optional().nullable(),
+  letter: z.string().optional().nullable(),
+  problem: z.object({
+    title: z.string().optional().default(""),
+    body: z.string().optional().default(""),
+  }),
   scope: z.string().optional().nullable(),
   deliverables: z.array(DeliverableSchema),
+  timeline: z.array(TimelineSchema),
+  related_systems: z.array(RelatedSystemSchema),
   fees: z.object({
-    amount: z.string().optional(),
-    term: z.string().optional(),
-    notes: z.string().optional(),
+    amount: z.string().optional().default(""),
+    deposit: z.string().optional().default(""),
+    deposit_label: z.string().optional().default(""),
+    notes: z.string().optional().default(""),
   }),
   terms: z.array(ClauseSchema),
 });
@@ -57,13 +74,16 @@ export async function createContract(input: ContractInput) {
       doc_number: docNumber,
       title: parsed.title,
       effective_date: parsed.effective_date || null,
-      lede: parsed.lede || null,
+      letter: parsed.letter || null,
+      problem: parsed.problem,
       scope: parsed.scope || null,
       client_name: parsed.client_name,
       client_email: parsed.client_email,
       client_company: parsed.client_company || null,
       client_title: parsed.client_title || null,
       deliverables: parsed.deliverables,
+      timeline: parsed.timeline,
+      related_systems: parsed.related_systems,
       fees: parsed.fees,
       terms: parsed.terms,
       status: "draft",

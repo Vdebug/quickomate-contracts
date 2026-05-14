@@ -8,12 +8,13 @@ export type ContractStatus =
 
 export type Deliverable = { label: string; detail?: string };
 export type Clause = { heading: string; body: string };
+export type RelatedSystem = { title: string; body: string };
+export type Problem = { title?: string; body?: string };
 
 export type Fees = {
   amount?: string;
-  currency?: string;
-  schedule?: string;
-  term?: string;
+  deposit?: string;
+  deposit_label?: string;
   notes?: string;
 };
 
@@ -30,8 +31,12 @@ export type Contract = {
   title: string;
   effective_date: string | null;
   lede: string | null;
+  letter: string | null;
+  problem: Problem;
   scope: string | null;
   deliverables: Deliverable[];
+  timeline: Deliverable[];
+  related_systems: RelatedSystem[];
   fees: Fees;
   terms: Clause[];
   custom_blocks: Clause[];

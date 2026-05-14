@@ -227,7 +227,7 @@ export function ContractPDF({
             <Text style={s.sectionNum}>04 / SCOPE OF WORK</Text>
             <Text style={s.sectionH2}>Quickomate will build a system that fulfils the following:</Text>
             {contract.deliverables.map((d, i) => (
-              <View key={i} style={s.bulletItem}>
+              <View key={i} style={s.bulletItem} wrap={false}>
                 <Text style={s.bulletNum}>{String(i + 1).padStart(2, "0")}</Text>
                 <Text style={s.bulletText}>
                   <Text style={{ fontWeight: 700 }}>{d.label}</Text>
@@ -247,7 +247,7 @@ export function ContractPDF({
             <Text style={s.sectionNum}>05 / TIMELINE</Text>
             <Text style={s.sectionH2}>When you can expect what.</Text>
             {contract.timeline.map((t, i) => (
-              <View key={i} style={s.timelineItem}>
+              <View key={i} style={s.timelineItem} wrap={false}>
                 <Text style={s.timelineLabel}>{(t.label || "").toUpperCase()}</Text>
                 <Text style={s.timelineText}>{t.detail}</Text>
               </View>
@@ -265,7 +265,7 @@ export function ContractPDF({
             )}
             <View style={s.relatedGrid}>
               {contract.related_systems.map((r, i) => (
-                <View key={i} style={s.relatedTile}>
+                <View key={i} style={s.relatedTile} wrap={false}>
                   <Text style={s.relatedTitle}>{r.title}</Text>
                   <Text style={s.relatedBody}>{r.body}</Text>
                 </View>
@@ -279,7 +279,7 @@ export function ContractPDF({
           <View style={s.section}>
             <Text style={s.sectionNum}>07 / YOUR INVESTMENT</Text>
             <Text style={s.sectionH2}>Pricing &amp; terms.</Text>
-            <View style={s.feesBlock}>
+            <View style={s.feesBlock} wrap={false}>
               {contract.fees.amount && (
                 <View style={s.feeCell}>
                   <Text style={s.feeLabel}>// INVESTMENT</Text>
@@ -308,7 +308,7 @@ export function ContractPDF({
               {provider.name} will build the system above for {company} per the scope laid out in this proposal. The terms below protect your confidentiality and streamline our information sharing. Questions? Email {provider.email}.
             </Text>
             {contract.terms.map((c, i) => (
-              <View key={i} style={s.clause}>
+              <View key={i} style={s.clause} wrap={false}>
                 <Text style={s.clauseH3}>{c.heading.toUpperCase()}</Text>
                 <Text style={s.clauseP}>{c.body}</Text>
               </View>
@@ -317,10 +317,10 @@ export function ContractPDF({
         )}
 
         {/* Signatures */}
-        <View style={s.sigSection}>
+        <View style={s.sigSection} wrap={false}>
           <Text style={s.sectionH2}>Signatures</Text>
           <View style={s.sigGrid}>
-            <View style={s.sigCell}>
+            <View style={s.sigCell} wrap={false}>
               <Text style={s.sigLabel}>// PROVIDER</Text>
               {provider.signaturePng ? (
                 <Image src={provider.signaturePng} style={s.sigImage} />
@@ -336,7 +336,7 @@ export function ContractPDF({
                 DATE: {new Date(contract.signed_at ?? Date.now()).toISOString().slice(0, 10)}
               </Text>
             </View>
-            <View style={s.sigCell}>
+            <View style={s.sigCell} wrap={false}>
               <Text style={s.sigLabel}>// CLIENT</Text>
               {contract.signer_signature_png ? (
                 <Image src={contract.signer_signature_png} style={s.sigImage} />

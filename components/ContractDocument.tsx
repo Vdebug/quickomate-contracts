@@ -178,7 +178,7 @@ export function ContractDocument({ contract, provider, showStatus = true }: Prop
             {contract.fees.amount && (
               <div>
                 <div className="font-mono text-[11px] uppercase tracking-wider opacity-70 mb-1.5">
-                  // Total investment
+                  // Investment
                 </div>
                 <div className="text-3xl font-bold leading-tight">{contract.fees.amount}</div>
               </div>

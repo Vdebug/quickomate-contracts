@@ -276,7 +276,7 @@ export function ContractPDF({
             <View style={s.feesBlock}>
               {contract.fees.amount && (
                 <View style={s.feeCell}>
-                  <Text style={s.feeLabel}>// TOTAL INVESTMENT</Text>
+                  <Text style={s.feeLabel}>// INVESTMENT</Text>
                   <Text style={s.feeVal}>{contract.fees.amount}</Text>
                 </View>
               )}

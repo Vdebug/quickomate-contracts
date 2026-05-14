@@ -32,20 +32,20 @@ export function SignedConfirmation({
       <Head />
       <Preview>
         {audience === "client"
-          ? `Signed — ${contractTitle}`
-          : `${clientCompany ?? clientName} signed — ${contractTitle}`}
+          ? `Signed, ${contractTitle}`
+          : `${clientCompany ?? clientName} signed, ${contractTitle}`}
       </Preview>
       <Body style={body}>
         <Container style={container}>
           <Text style={mono}>QUICKOMATE / SIGNED</Text>
           <Heading style={h1}>
-            {audience === "client" ? "Thanks — you're signed." : "Signed."}
+            {audience === "client" ? "Thanks, you're signed." : "Signed."}
           </Heading>
           <Text style={p}>Hi {greeting},</Text>
           {audience === "client" ? (
             <Text style={p}>
               Thanks for signing the {contractTitle}. A copy is attached to this email for your
-              records — both parties have received it.
+              records, both parties have received it.
             </Text>
           ) : (
             <Text style={p}>

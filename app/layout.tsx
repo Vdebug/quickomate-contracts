@@ -27,7 +27,7 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: "Quickomate — Contracts",
+  title: "Quickomate, Contracts",
   description: "The definitive AI growth partner for fast-moving B2B companies.",
 };
 

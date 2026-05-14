@@ -79,7 +79,7 @@ export default async function Dashboard() {
             href={`/app/contracts/${c.id}`}
             className="grid grid-cols-[110px_1fr_1fr_120px_140px] gap-4 px-5 py-4 border-b border-[#ccc] last:border-b-0 items-center text-sm no-underline text-[var(--qm-ink)] hover:bg-[var(--qm-surface)] transition"
           >
-            <div className="font-mono text-xs text-[var(--qm-muted)]">{c.doc_number ?? "—"}</div>
+            <div className="font-mono text-xs text-[var(--qm-muted)]">{c.doc_number ?? "-"}</div>
             <div>
               <div className="font-semibold">{c.client_company ?? c.client_name}</div>
               <div className="text-xs text-[#666]">{c.client_email}</div>

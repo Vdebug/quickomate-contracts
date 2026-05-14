@@ -10,14 +10,14 @@ export function generateShareToken(): string {
 }
 
 export function formatDate(iso: string | null | undefined): string {
-  if (!iso) return "—";
+  if (!iso) return "-";
   const d = new Date(iso);
   return d.toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" })
     .toUpperCase();
 }
 
 export function formatDateTimeUTC(iso: string | null | undefined): string {
-  if (!iso) return "—";
+  if (!iso) return "-";
   const d = new Date(iso);
   return `${d.toISOString().replace("T", " ").slice(0, 19)} UTC`;
 }

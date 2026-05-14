@@ -22,7 +22,7 @@ export function ContractDocument({ contract, provider, showStatus = true }: Prop
           </h1>
         </div>
         <div className="qm-mono-label text-right leading-relaxed">
-          <div>DOC: {contract.doc_number ?? "—"}</div>
+          <div>DOC: {contract.doc_number ?? "-"}</div>
           <div>
             DATE:{" "}
             {contract.effective_date

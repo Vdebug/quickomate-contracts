@@ -33,7 +33,7 @@ export default async function ThanksPage({
           <div className="qm-mono-label mb-2">// SUMMARY</div>
           <div className="font-mono text-sm leading-relaxed text-[#222]">
             STATUS:&nbsp;&nbsp;&nbsp;{data.status.toUpperCase()}<br />
-            SIGNED_AT: {data.signed_at ? new Date(data.signed_at).toISOString().slice(0, 19).replace("T", " ") : "—"} UTC
+            SIGNED_AT: {data.signed_at ? new Date(data.signed_at).toISOString().slice(0, 19).replace("T", " ") : "-"} UTC
             <br />
             REFERENCE: {String(data.id).slice(0, 8)}
           </div>

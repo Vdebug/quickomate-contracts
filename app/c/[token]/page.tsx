@@ -49,7 +49,7 @@ export default async function PublicContractPage({
                     dateStyle: "long",
                     timeStyle: "short",
                   })
-                : "—"}
+                : "-"}
               {contract.signer_typed_name ? ` by ${contract.signer_typed_name}` : ""}.
             </p>
             <p className="text-sm text-[#666]">

@@ -58,5 +58,5 @@ export function checkPassword(input: string): boolean {
   return crypto.timingSafeEqual(Buffer.from(input), Buffer.from(expected));
 }
 
-/** Single-tenant constant — every contract is "owned by" this UUID. */
+/** Single-tenant constant, every contract is "owned by" this UUID. */
 export const ADMIN_OWNER_ID = "00000000-0000-0000-0000-000000000001";

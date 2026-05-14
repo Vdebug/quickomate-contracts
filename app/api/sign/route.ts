@@ -169,14 +169,14 @@ export async function POST(req: NextRequest) {
         resend.emails.send({
           from: fromAddress,
           to: contract.client_email,
-          subject: `Signed — ${contract.title}`,
+          subject: `Signed, ${contract.title}`,
           html: clientHtml,
           attachments: [pdfAttachment],
         }),
         resend.emails.send({
           from: fromAddress,
           to: providerEmail,
-          subject: `${contract.client_company ?? contract.client_name} signed — ${contract.title}`,
+          subject: `${contract.client_company ?? contract.client_name} signed, ${contract.title}`,
           html: adminHtml,
           attachments: [pdfAttachment],
         }),
@@ -191,7 +191,7 @@ export async function POST(req: NextRequest) {
       // Non-fatal: PDF is in storage, admin can resend
     }
   } else {
-    console.warn("RESEND_API_KEY not configured — skipping email send.");
+    console.warn("RESEND_API_KEY not configured, skipping email send.");
   }
 
   return NextResponse.json({ ok: true, contract_id: contract.id });

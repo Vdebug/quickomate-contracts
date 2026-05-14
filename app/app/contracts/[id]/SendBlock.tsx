@@ -88,7 +88,7 @@ export function SendBlock({ contractId, status, clientEmail, shareUrl, adminEmai
           <>
             <p className="text-sm text-[#333]">
               Sent to <strong>{clientEmail}</strong>
-              {" — "}awaiting signature.
+              {", "}awaiting signature.
             </p>
             <button onClick={send} disabled={sending} className="qm-btn-ghost w-full justify-center">
               {sending ? "RESENDING…" : "RESEND EMAIL"}

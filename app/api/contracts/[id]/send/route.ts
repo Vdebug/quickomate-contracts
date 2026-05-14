@@ -72,7 +72,7 @@ export async function POST(
       from: fromAddress,
       to: c.client_email,
       bcc: providerEmail,
-      subject: `Quickomate — ${c.title} for ${c.client_company ?? c.client_name}`,
+      subject: `Quickomate, ${c.title} for ${c.client_company ?? c.client_name}`,
       html,
     });
   } catch (err) {

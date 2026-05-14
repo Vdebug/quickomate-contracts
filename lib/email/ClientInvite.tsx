@@ -31,7 +31,7 @@ export function ClientInvite({
     <Html>
       <Head />
       <Preview>
-        Quickomate — {contractTitle} for {clientCompany ?? clientName}
+        Quickomate, {contractTitle} for {clientCompany ?? clientName}
       </Preview>
       <Body style={body}>
         <Container style={container}>
@@ -41,7 +41,7 @@ export function ClientInvite({
           <Text style={p}>
             Following our conversation, here&rsquo;s the {contractTitle} for{" "}
             <strong>{clientCompany ?? clientName}</strong>. Please review and sign at your
-            convenience — it should take 2 minutes.
+            convenience, it should take 2 minutes.
           </Text>
           <Section style={{ margin: "32px 0" }}>
             <Button style={btn} href={signUrl}>
@@ -51,7 +51,7 @@ export function ClientInvite({
           <Text style={p}>
             If anything looks off, just reply to this email and we&rsquo;ll adjust.
           </Text>
-          <Text style={p}>— {providerName}, Quickomate</Text>
+          <Text style={p}>- {providerName}, Quickomate</Text>
           <Hr style={hr} />
           <Text style={footer}>
             QUICKOMATE / THE DEFINITIVE AI GROWTH PARTNER · quickomate.com

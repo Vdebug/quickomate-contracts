@@ -19,7 +19,7 @@ const defaultTimeline: ContractInput["timeline"] = [
 
 const defaultRelated: ContractInput["related_systems"] = [
   { title: "Lead sourcing & cold outreach", body: "High-ROI cold outreach that routinely generates 15–20× return on spend. We source, write, send, and iterate on proven campaigns and deliver qualified meetings to your inbox." },
-  { title: "AI-personalized reply handling", body: "Custom agents triage replies, draft responses in your voice, and book meetings — keeping your inbox clear without dropping warm leads." },
+  { title: "AI-personalized reply handling", body: "Custom agents triage replies, draft responses in your voice, and book meetings, keeping your inbox clear without dropping warm leads." },
   { title: "Inbound infrastructure", body: "Landing pages, lead magnets, and CRM hooks to convert traffic into pipeline once outbound creates demand." },
   { title: "Content engine", body: "LinkedIn + email content systems that compound brand and inbound over 3–6 months." },
 ];
@@ -48,13 +48,13 @@ export function ContractForm() {
     client_company: "",
     client_title: "",
     letter:
-      "I spent some time boiling down our conversation into what I believe to be the core of the opportunity in front of you. The proposal below lays out the problem as I understood it, the system I'd build to fix it, the timeline you can expect, and what it will cost.\n\nI'm confident I can do an outstanding job here — if I wasn't, I wouldn't have put this together.",
+      "I spent some time boiling down our conversation into what I believe to be the core of the opportunity in front of you. The proposal below lays out the problem as I understood it, the system I'd build to fix it, the timeline you can expect, and what it will cost.\n\nI'm confident I can do an outstanding job here, if I wasn't, I wouldn't have put this together.",
     problem: {
       title: "",
       body: "",
     },
     scope:
-      "Quickomate will design, build, and operate an end-to-end outbound growth system — ICP research, cold email infrastructure, custom AI agents for personalization, and ongoing performance optimization. Target: 15–20 qualified appointments per month within 60 days.",
+      "Quickomate will design, build, and operate an end-to-end outbound growth system, ICP research, cold email infrastructure, custom AI agents for personalization, and ongoing performance optimization. Target: 15–20 qualified appointments per month within 60 days.",
     deliverables: defaultDeliverables,
     timeline: defaultTimeline,
     related_systems: defaultRelated,
@@ -155,7 +155,7 @@ export function ContractForm() {
             onChange={(e) => set("problem", { ...form.problem, title: e.target.value })}
           />
         </Field>
-        <Field label="// Problem body (3-4 bulleted pains works well — use newlines)">
+        <Field label="// Problem body (3-4 bulleted pains works well, use newlines)">
           <textarea
             className="qm-input"
             rows={5}
@@ -204,7 +204,7 @@ export function ContractForm() {
 
       <FormSection num="08 / RELATED SYSTEMS">
         <p className="text-sm text-[var(--qm-muted)] mb-3">
-          Adjacent offerings — sets up upsell opportunities without selling them now.
+          Adjacent offerings, sets up upsell opportunities without selling them now.
         </p>
         <div className="space-y-3">
           {form.related_systems.map((r, i) => (

@@ -1,4 +1,4 @@
-# Quickomate — Contract Signing App
+# Quickomate, Contract Signing App
 
 A lightweight web app for sending branded contracts to clients, capturing signatures inline, auto-generating a signed PDF, and emailing the artifact to both parties. Built with Next.js 16, Supabase, Tailwind v4, `@react-pdf/renderer`, and Resend.
 
@@ -8,7 +8,7 @@ A lightweight web app for sending branded contracts to clients, capturing signat
 - **Client:** opens the email link → reviews the branded contract on a web page → signs inline (drawn signature + typed legal name + agreement checkbox).
 - **System:** on submit, captures IP/UA/timestamp, renders a print-ready PDF embedding the audit trail, uploads it to Supabase Storage, and emails both parties.
 
-The whole flow is one page from the client's perspective. PDFs are the archival artifact — the web page is the signing surface.
+The whole flow is one page from the client's perspective. PDFs are the archival artifact, the web page is the signing surface.
 
 ## Local development
 
@@ -43,7 +43,7 @@ Visit http://localhost:3000 → you'll be redirected to `/app/login`. Enter your
 
 ### 4. Create + send a contract
 
-`/app/contracts/new` → fill in client + content → save → from the detail page, hit **EMAIL TO …**. In local dev (no Resend key), the email step is mocked and the share link is surfaced — copy it from the **Share link** field on the detail page.
+`/app/contracts/new` → fill in client + content → save → from the detail page, hit **EMAIL TO …**. In local dev (no Resend key), the email step is mocked and the share link is surfaced, copy it from the **Share link** field on the detail page.
 
 ### 5. Sign as the client
 
@@ -113,4 +113,4 @@ supabase/
 - **Local-only mock email mode:** if `RESEND_API_KEY` is empty, `POST /api/contracts/[id]/send` skips the API call and just marks the contract as `sent` so you can copy the link yourself.
 - **Brand tokens** live in `app/globals.css` under the `@theme inline` block (Tailwind v4 style).
 - **Signature evidence** stored: drawn PNG + typed legal name + IP + user-agent + timestamp. Audit log writes a row for every lifecycle event.
-- **RLS:** admins only see their own contracts. The public signing page uses the service-role client server-side to read by `share_token` only — the anon role has no direct table access.
+- **RLS:** admins only see their own contracts. The public signing page uses the service-role client server-side to read by `share_token` only, the anon role has no direct table access.

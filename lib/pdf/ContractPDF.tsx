@@ -140,7 +140,7 @@ export function ContractPDF({
   contract: Contract;
   provider: ProviderInfo;
 }) {
-  const docNumber = contract.doc_number ?? "—";
+  const docNumber = contract.doc_number ?? "-";
   const company = contract.client_company ?? contract.client_name;
   const firstName = contract.client_name.split(" ")[0];
   const effective = contract.effective_date
@@ -186,7 +186,7 @@ export function ContractPDF({
           </View>
         </View>
 
-        {/* 01 — Personal Letter */}
+        {/* 01, Personal Letter */}
         {contract.letter && (
           <View style={s.section}>
             <Text style={s.sectionNum}>01 / LETTER</Text>
@@ -200,7 +200,7 @@ export function ContractPDF({
           </View>
         )}
 
-        {/* 02 — Problem */}
+        {/* 02, Problem */}
         {(contract.problem?.title || contract.problem?.body) && (
           <View style={s.section}>
             <Text style={s.sectionNum}>02 / PROBLEM</Text>
@@ -209,7 +209,7 @@ export function ContractPDF({
           </View>
         )}
 
-        {/* 03 — Solution */}
+        {/* 03, Solution */}
         {contract.scope && (
           <View style={s.section}>
             <Text style={s.sectionNum}>03 / SOLUTION</Text>
@@ -218,7 +218,7 @@ export function ContractPDF({
           </View>
         )}
 
-        {/* 04 — Scope of Work */}
+        {/* 04, Scope of Work */}
         {contract.deliverables.length > 0 && (
           <View style={s.section}>
             <Text style={s.sectionNum}>04 / SCOPE OF WORK</Text>
@@ -228,7 +228,7 @@ export function ContractPDF({
                 <Text style={s.bulletNum}>{String(i + 1).padStart(2, "0")}</Text>
                 <Text style={s.bulletText}>
                   <Text style={{ fontWeight: 700 }}>{d.label}</Text>
-                  {d.detail ? ` — ${d.detail}` : ""}
+                  {d.detail ? `, ${d.detail}` : ""}
                 </Text>
               </View>
             ))}
@@ -238,7 +238,7 @@ export function ContractPDF({
           </View>
         )}
 
-        {/* 05 — Timeline */}
+        {/* 05, Timeline */}
         {contract.timeline && contract.timeline.length > 0 && (
           <View style={s.section}>
             <Text style={s.sectionNum}>05 / TIMELINE</Text>
@@ -252,7 +252,7 @@ export function ContractPDF({
           </View>
         )}
 
-        {/* 06 — Related Systems */}
+        {/* 06, Related Systems */}
         {contract.related_systems && contract.related_systems.length > 0 && (
           <View style={s.section}>
             <Text style={s.sectionNum}>06 / RELATED SYSTEMS</Text>
@@ -268,7 +268,7 @@ export function ContractPDF({
           </View>
         )}
 
-        {/* 07 — Your Investment */}
+        {/* 07, Your Investment */}
         {(contract.fees?.amount || contract.fees?.deposit) && (
           <View style={s.section}>
             <Text style={s.sectionNum}>07 / YOUR INVESTMENT</Text>
@@ -293,7 +293,7 @@ export function ContractPDF({
           </View>
         )}
 
-        {/* 08 — Terms */}
+        {/* 08, Terms */}
         {contract.terms.length > 0 && (
           <View style={s.section}>
             <Text style={s.sectionNum}>08 / TERMS</Text>
@@ -343,7 +343,7 @@ export function ContractPDF({
               <Text style={s.sigMeta}>
                 NAME: {contract.signer_typed_name ?? contract.client_name}{"\n"}
                 {(contract.client_company ?? "").toUpperCase()}{"\n"}
-                DATE: {contract.signed_at ? new Date(contract.signed_at).toISOString().slice(0, 19).replace("T", " ") + " UTC" : "—"}
+                DATE: {contract.signed_at ? new Date(contract.signed_at).toISOString().slice(0, 19).replace("T", " ") + " UTC" : "-"}
               </Text>
             </View>
           </View>

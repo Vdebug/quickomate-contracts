@@ -43,7 +43,7 @@ export default async function ContractDetail({
       <div>
         <div className="mb-6 flex items-end justify-between gap-4 flex-wrap">
           <div>
-            <div className="qm-mono-label mb-1">// {contract.doc_number ?? "—"}</div>
+            <div className="qm-mono-label mb-1">// {contract.doc_number ?? "-"}</div>
             <h1 className="text-3xl font-bold tracking-tight">{contract.client_company ?? contract.client_name}</h1>
             <p className="qm-mono-label mt-1">STATUS: {contract.status.toUpperCase()}</p>
           </div>
@@ -80,13 +80,13 @@ export default async function ContractDetail({
             <div className="qm-mono-label">// METADATA</div>
           </div>
           <div className="px-4 py-4 space-y-2 font-mono text-[11px] text-[#222]">
-            <Meta k="DOC" v={contract.doc_number ?? "—"} />
+            <Meta k="DOC" v={contract.doc_number ?? "-"} />
             <Meta k="STATUS" v={contract.status.toUpperCase()} />
             <Meta k="CREATED" v={formatDate(contract.created_at)} />
-            <Meta k="SENT" v={contract.sent_at ? formatDateTimeUTC(contract.sent_at) : "—"} />
-            <Meta k="VIEWED" v={contract.viewed_at ? formatDateTimeUTC(contract.viewed_at) : "—"} />
-            <Meta k="SIGNED" v={contract.signed_at ? formatDateTimeUTC(contract.signed_at) : "—"} />
-            <Meta k="SIGNER_IP" v={contract.signer_ip ?? "—"} />
+            <Meta k="SENT" v={contract.sent_at ? formatDateTimeUTC(contract.sent_at) : "-"} />
+            <Meta k="VIEWED" v={contract.viewed_at ? formatDateTimeUTC(contract.viewed_at) : "-"} />
+            <Meta k="SIGNED" v={contract.signed_at ? formatDateTimeUTC(contract.signed_at) : "-"} />
+            <Meta k="SIGNER_IP" v={contract.signer_ip ?? "-"} />
           </div>
         </div>
 

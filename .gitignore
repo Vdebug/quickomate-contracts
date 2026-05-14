@@ -40,3 +40,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Reference materials (private — not for the public repo)
+Nick Proposal System MS Video.md

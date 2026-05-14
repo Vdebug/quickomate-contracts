@@ -48,14 +48,16 @@ export function ContractDocument({ contract, provider, showStatus = true }: Prop
         </div>
       </header>
 
-      <div className="font-sans font-bold tracking-tight text-5xl md:text-6xl leading-[.95] mb-4">
-        {company}
-        <br />
-        {contract.title}.
+      {contract.client_company && (
+        <div className="qm-mono-label mb-3">
+          // PREPARED FOR / {contract.client_company.toUpperCase()}
+        </div>
+      )}
+      <div className="font-sans font-bold tracking-tight text-5xl md:text-6xl leading-[.95] mb-4 whitespace-pre-line">
+        {contract.lede || contract.title}
       </div>
       <p className="font-serif text-xl md:text-2xl leading-snug text-[#222] max-w-[640px] mb-12">
-        This proposal contains all the details and pricing regarding the scope of work and terms
-        requested by {contract.client_name}.
+        Scope of work, pricing, and terms for {contract.client_name}.
       </p>
 
       {/* === PARTIES === */}

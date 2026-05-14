@@ -164,9 +164,12 @@ export function ContractPDF({
         </View>
 
         {/* Cover */}
-        <Text style={s.cover}>{company}{"\n"}{contract.title}.</Text>
+        {contract.client_company && (
+          <Text style={[s.mono, { marginBottom: 4 }]}>// PREPARED FOR / {contract.client_company.toUpperCase()}</Text>
+        )}
+        <Text style={s.cover}>{contract.lede || contract.title}</Text>
         <Text style={s.lede}>
-          This proposal contains all the details and pricing regarding the scope of work and terms requested by {contract.client_name}.
+          Scope of work, pricing, and terms for {contract.client_name}.
         </Text>
 
         {/* Parties */}

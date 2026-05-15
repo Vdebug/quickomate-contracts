@@ -205,7 +205,7 @@ export function ContractDocument({ contract, provider, showStatus = true }: Prop
       {contract.terms.length > 0 && (
         <Section num="08 / TERMS" title="Operating terms.">
           <p className="text-sm text-[#444] mb-3 max-w-[680px]">
-            {provider.name} will build the system above for {company} per the scope laid out in
+            Quickomate will build the system above for {company} per the scope laid out in
             this proposal. The terms below protect your confidentiality and streamline our
             information sharing. Questions? Email{" "}
             <a className="underline" href={`mailto:${provider.email}`}>

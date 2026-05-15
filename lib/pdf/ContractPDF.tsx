@@ -305,7 +305,7 @@ export function ContractPDF({
             <Text style={s.sectionNum}>08 / TERMS</Text>
             <Text style={s.sectionH2}>Operating terms.</Text>
             <Text style={s.termsLead}>
-              {provider.name} will build the system above for {company} per the scope laid out in this proposal. The terms below protect your confidentiality and streamline our information sharing. Questions? Email {provider.email}.
+              Quickomate will build the system above for {company} per the scope laid out in this proposal. The terms below protect your confidentiality and streamline our information sharing. Questions? Email {provider.email}.
             </Text>
             {contract.terms.map((c, i) => (
               <View key={i} style={s.clause} wrap={false}>
